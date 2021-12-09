@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import axios from 'axios'
 import PhotoCard from './components/photoCard'
 import Header from './components/header'
+import "./App.css";
+import styled from 'styled-components'
+//import styled from 'styled-components'
+
+const AppContainer = styled.div`
+ 
+ `
 
 function App() {
   const [photoCard, setPhotoCard] = useState({})
