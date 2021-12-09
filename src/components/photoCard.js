@@ -1,11 +1,16 @@
 import React from 'react'
 
 export default function PhotoCard(props) {
-    const { info } = props
+    const { pcInfo } = props
 
     return (
         <div className='photoCard'>
-            <img src={info.url} alt='NASA "photo of the day"'/>
+            <div className = 'photoInfo'>
+                <h2>{pcInfo.title}</h2>
+                <img src={pcInfo.url} alt={pcInfo.title}/>
+                <span>{pcInfo.copyright ? `Copyright: ${pcInfo.copyright} `: null}</span>
+            </div>
+            <p>{pcInfo.explanation}</p>
         </div>
     )
 }
