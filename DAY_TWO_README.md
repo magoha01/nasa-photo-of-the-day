@@ -16,12 +16,12 @@ In this project you will refactor the styling you completed in the APOD app. You
 
 This homework is a continuation of the work you have done previously.
 
-- [ ] CD into your old project
-- [ ] Continue to make changes and push to the same branch
+- [X] CD into your old project
+- [X] Continue to make changes and push to the same branch
 
 ### Task 2a: MVP Requirements
 
-- [ ] Style your app using styled-components.
+- [x] Style your app using styled-components.
 
 ### Task 3: Stretch Problems
 
@@ -40,3 +40,4 @@ Follow these steps for completing your project.
 -----
 
 ## Part I - [Component Side Effects](README.md)
+

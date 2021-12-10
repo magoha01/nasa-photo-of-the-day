@@ -1,15 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
+import PhotoCard from './components/photoCard'
+import Header from './components/header'
 import "./App.css";
+import styled from 'styled-components'
+//import styled from 'styled-components'
+
+const AppContainer = styled.div`
+ 
+ `
 
 function App() {
+  const [photoCard, setPhotoCard] = useState({})
+  const [header, setHeader] = useState({})
+  useEffect(() => { 
+    const fetchPageInfo= () => {
+       axios.get(`https://api.nasa.gov/planetary/apod?api_key=QCdee4fA6R2LJIjWO0dds8DWpy7jgkagHUiQ7V9a`)
+      .then(res => {
+        setPhotoCard(res.data);
+        setHeader(res.data);
+      })
+      .catch(err =>{
+        console.error(err);
+      })
+    }
+   fetchPageInfo()
+  }, [])
+  
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
-    </div>
+       <Header headerInfo={header} />
+       <PhotoCard pcInfo={photoCard}/>
+       {/* {photoCard.map(card =>{
+          return <PhotoCard pcInfo={card} />
+          }
+        )} */}
+      </div>
   );
 }
 
 export default App;
+
+//QCdee4fA6R2LJIjWO0dds8DWpy7jgkagHUiQ7V9a&count=2
